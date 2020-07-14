@@ -1,8 +1,8 @@
-{ 
+{
     "name": "book finder",
     "version": "1.0",
     "manifest_version": 2,
-    "browser_action": 
+    "browser_action":
         {
             "default_popup": "popup.html",
             "default_title": "book finder"
@@ -13,5 +13,20 @@
         "input",
         "activeTab",
         "<all_urls>"
-    ]
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://libgen.is/search.*"],
+        "js": ["libgen_search_results.js"]
+      },
+      {
+        "matches": ["https://libgen.is/book/*"],
+        "js": ["libgen_final_page.js"]
+      }
+    ],
+    "background" :
+      {
+        "scripts": ["background.js"],
+        "persistent": false
+      }
 }
