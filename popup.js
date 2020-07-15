@@ -5,7 +5,7 @@ function query(title, author)
     author = data.author;
     alert(data.author);
   });
-  chrome.tabs.executeScript(null,{code: 'document.getElementById("searchform").value=' + '"' + title + '"'});
+  chrome.tabs.executeScript(null,{code: 'document.getElementById("searchform").value=' + '"' + title + ' ' + author + '"'});
   chrome.tabs.executeScript(null, {code:'document.getElementsByTagName("input")[1].click()'});
 }
 

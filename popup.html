@@ -2,23 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>book finder</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson Text">
 </head>
+<style>
+body
+{
+  font-family:"Crimson Text",sans-serif;
+  font-size: 16px;
+  background: beige;
+  width:275px;
+  height:280px;
+}
+</style>
+
 <body>
-    <label>Title: <span style="color: red">*</span>
+    <div style="text-align: center;">
+    <label>Title: <span style="color: red">*</span><br>
     <input type="text" id="title">
-    </label><br>
-    <label>Author:
+    </label>
+    <br>
+    <label>Author: <br>
     <input type="text" id="author">
     </label>
     <br><br>
-    <div style="text-align: center">
-      This extension queries the LibGen library to find your book. 
-    </div>
-    <br>
-    <div style="text-align: center">
-    <button id="search">Find my book!</button>
-    </div>
-    <script src="popup.js" charset="utf-8"></script>
+      This extension queries the LibGen library to find your book. Your result will open
+      up in a new tab. LibGen might not have the book you need, so please check the <a href = "https://z-lib.org/">ZLibrary</a>
+      or the <a href="https://memoryoftheworld.org/">Memory of the World</a> library for results beyond LibGen.
+    <br><br>
+    <button id="search" style="font-family:"Crimson Text",sans-serif">Find my book!</button>
+    <br><br>
+      Made by <a href="https://neelushah02.github.io/PersonalWebsite/">Neel Shah </a>.
+  </div>
 </body>
 </html>

@@ -5,8 +5,13 @@
     "browser_action":
         {
             "default_popup": "popup.html",
-            "default_title": "book finder"
+            "default_title": "book finder finds your ebooks for you!"
         },
+    "description": "book finder saves you a few clicks by finding your ebook for you.",
+    "icons":
+      {
+            "128": "icon.png"
+      },
     "permissions":
     [
         "tabs",
