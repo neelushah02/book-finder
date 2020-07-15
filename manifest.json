@@ -11,6 +11,7 @@
     [
         "tabs",
         "input",
+        "storage",
         "activeTab",
         "<all_urls>"
     ],

@@ -1,21 +1,12 @@
 function query(title, author)
 {
   chrome.tabs.create({url: "https://libgen.is/"});
+  chrome.storage.local.get('author', function(data){
+    author = data.author;
+    alert(data.author);
+  });
   chrome.tabs.executeScript(null,{code: 'document.getElementById("searchform").value=' + '"' + title + '"'});
   chrome.tabs.executeScript(null, {code:'document.getElementsByTagName("input")[1].click()'});
-  //chrome.tabs.query({string: "https://libgen.is/search.*"}, function(tabs) {
-    //var rows = document.getElementsByTagName("tr");
-    //var i;
-    //for (i = 0; i < rows.length; i++)
-    //{
-      //  rows[i].style.backgroundColor = "red";
-    //}
-  //});
-  //setTimeout(function(){
-    //string temp = chrome.runtime.getURL();
-    //chrome.tabs.update({url: temp});
-  //}, 4000);
-
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -23,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function onclick () {
     const author = document.getElementById("author").value;
     const title = document.getElementById("title").value;
+    chrome.storage.local.set({'author': author});
+    chrome.storage.local.set({'title': title});
     query(title, author);
   }
 }, false)
