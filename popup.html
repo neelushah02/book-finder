@@ -10,14 +10,37 @@ body
 {
   font-family:"Crimson Text",sans-serif;
   font-size: 16px;
-  background: beige;
-  width:275px;
-  height:280px;
+  margin: 0;
+  padding: 0;
+
+  width:300px;
+  height:375px;
+}
+#particles-js
+{
+  height:100%;
+  width:100%;
+  background-color: beige;
+  z-index: 1;
+  position: absolute;
+}
+#content
+{
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  font-weight: bold;
+}
+#search
+{
+  font-family:"Crimson Text",sans-serif;
+  font-size: 20px;
 }
 </style>
 
 <body>
-    <div style="text-align: center;">
+  <div id = "particles-js">
+    <div id = "content">
     <label>Title: <span style="color: red">*</span><br>
     <input type="text" id="title">
     </label>
@@ -25,16 +48,21 @@ body
     <label>Author: <br>
     <input type="text" id="author">
     </label>
+    <span style="font-weight: normal;">
     <br><br>
       This extension queries the LibGen library to find your book. Your result will open
       up in a new tab, where you can press GET to start the download.
       LibGen might not have the book you need, so please check the <a href = "https://z-lib.org/">ZLibrary</a>
       or the <a href="https://memoryoftheworld.org/">Memory of the World</a> library for results beyond LibGen.
     <br><br>
-    <button id="search" style="font-family:"Crimson Text",sans-serif">Find my book!</button>
+    <button id="search">Find my book!</button>
     <br><br>
       Made by <a href="https://neelushah02.github.io/PersonalWebsite/">Neel Shah </a>.
+    </span>
   </div>
+</div>
   <script src="popup.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
